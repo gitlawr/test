@@ -10,6 +10,13 @@ stages:
       path: ./charts/memcached/v2.0.4
       catalog: library/memcached
       version: v2.0.5
+    envFrom:
+    - sourceName: publish-key
+      sourceKey: USERNAME
+    - sourceName: publish-key
+      sourceKey: PASSWORD
+    - sourceName: publish-key
+      sourceKey: DEPLOY_KEY
 - name: apply-app
   steps:
   - applyAppConfig:
