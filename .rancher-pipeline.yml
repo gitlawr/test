@@ -4,4 +4,17 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: echo test
+- name: publish-catalog
+  steps:
+  - publishCatalogConfig:
+      path: ./charts/memcached/v2.0.4
+      catalog: library/memcached
+      version: v2.0.5
+- name: apply-app
+  steps:
+  - applyAppConfig:
+      catalog: library/memcached
+      version: v2.0.4
+      name: myapp
+      targetNamespace: myappns
 timeout: 60
