@@ -21,7 +21,7 @@ stages:
   steps:
   - applyAppConfig:
       catalog: memcached
-      version: v2.0.4
+      version: 2.3.1
       name: myapp
       targetNamespace: myappns
       answers: |
