@@ -4,24 +4,38 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: echo test
-- name: publish-catalog
-  steps:
-  - publishCatalogConfig:
-      path: ./charts/memcached/v2.0.4
-      catalog: library/memcached
-      version: v2.0.5
-    envFrom:
-    - sourceName: publish-key
-      sourceKey: USERNAME
-    - sourceName: publish-key
-      sourceKey: PASSWORD
-    - sourceName: publish-key
-      sourceKey: DEPLOY_KEY
+# - name: publish-catalog
+#   steps:
+#   - publishCatalogConfig:
+#       path: ./charts/memcached/v2.0.4
+#       catalog: library/memcached
+#       version: v2.0.5
+#     envFrom:
+#     - sourceName: publish-key
+#       sourceKey: USERNAME
+#     - sourceName: publish-key
+#       sourceKey: PASSWORD
+#     - sourceName: publish-key
+#       sourceKey: DEPLOY_KEY
 - name: apply-app
   steps:
   - applyAppConfig:
-      catalog: library/memcached
+      catalog: memcached
       version: v2.0.4
       name: myapp
       targetNamespace: myappns
+      answers: |
+        {
+          "AntiAffinity": "hard",
+          "defaultImage": "true",
+          "image": "memcached",
+          "imageTag": "1.5.6-alpine",
+          "memcached.maxItemMemory": "64",
+          "memcached.verbosity": "v",
+          "metrics.enabled": "false",
+          "metrics.image": "quay.io/prometheus/memcached-exporter",
+          "metrics.imageTag": "v0.4.1",
+          "replicaCount": "1",
+          "showMemcachedOptions": "false"
+        }
 timeout: 60
