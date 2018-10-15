@@ -8,7 +8,7 @@ stages:
   steps:
   - publishCatalogConfig:
       path: ./charts/memcached/v2.0.4
-      catalog: library/memcached
+      catalog: memcached
       version: v2.0.5
       gitUrl: "git@github.com:gitlawr/test.git"
       gitBranch: test
