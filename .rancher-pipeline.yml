@@ -17,6 +17,10 @@ stages:
     envFrom:
     - sourceName: publish-key
       sourceKey: DEPLOY_KEY
+    - sourceName: publish-key
+      sourceKey: USERNAME
+    - sourceName: publish-key
+      sourceKey: PASSWORD
 - name: apply-app
   steps:
   - applyAppConfig:
