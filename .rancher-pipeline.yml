@@ -28,6 +28,7 @@ stages:
       version: 2.3.1
       name: myapp
       targetNamespace: myappns
+      # answers can be in either json or yaml format
       answers: |
         {
           "AntiAffinity": "hard",
