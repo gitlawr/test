@@ -4,19 +4,19 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: echo test
-# - name: publish-catalog
-#   steps:
-#   - publishCatalogConfig:
-#       path: ./charts/memcached/v2.0.4
-#       catalog: library/memcached
-#       version: v2.0.5
-#     envFrom:
-#     - sourceName: publish-key
-#       sourceKey: USERNAME
-#     - sourceName: publish-key
-#       sourceKey: PASSWORD
-#     - sourceName: publish-key
-#       sourceKey: DEPLOY_KEY
+- name: publish-catalog
+  steps:
+  - publishCatalogConfig:
+      path: ./charts/memcached/v2.0.4
+      catalog: library/memcached
+      version: v2.0.5
+      gitUrl: "git@github.com:gitlawr/test.git"
+      gitBranch: test
+      gitAuthor: test-author
+      gitEmail: test@example.com
+    envFrom:
+    - sourceName: publish-key
+      sourceKey: DEPLOY_KEY
 - name: apply-app
   steps:
   - applyAppConfig:
