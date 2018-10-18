@@ -9,8 +9,6 @@ stages:
       gitBranch: lawrtest
       gitAuthor: mytest
       gitEmail: test@example.com
-    env:
-      DEBUG: "true"
     envFrom:
     - sourceName: publish-keys
       sourceKey: USERNAME
