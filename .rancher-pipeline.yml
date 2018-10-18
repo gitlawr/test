@@ -2,7 +2,7 @@ stages:
 - name: publish
   steps:
   - publishCatalogConfig:
-      path: ./charts/memcached/v2.0.4
+      path: ./mychart
       catalog: memcached
       version: ${CICD_GIT_COMMIT}
       gitUrl: https://github.com/gitlawr/charts.git
