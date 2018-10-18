@@ -1,0 +1,19 @@
+stages:
+- name: publish
+  steps:
+  - publishCatalogConfig:
+      path: ./charts/memcached/v2.0.4
+      catalog: memcached
+      version: ${CICD_GIT_COMMIT}
+      gitUrl: https://github.com/gitlawr/charts.git
+      gitBranch: lawrtest
+      gitAuthor: mytest
+      gitEmail: test@example.com
+    envFrom:
+    - sourceName: publish-keys
+      sourceKey: USERNAME
+      targetKey: USERNAME
+    - sourceName: publish-keys
+      sourceKey: PASSWORD
+      targetKey: PASSWORD
+timeout: 60
