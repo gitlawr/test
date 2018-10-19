@@ -16,4 +16,12 @@ stages:
     - sourceName: publish-keys
       sourceKey: PASSWORD
       targetKey: PASSWORD
+- name: deploy app
+  steps:
+  - applyAppConfig:
+      catalog: lawrtest-memcached
+      version: 2.3.1
+      answers: '{"a":"b"}'
+      name: myapp
+      targetNamespace: myapp
 timeout: 60
