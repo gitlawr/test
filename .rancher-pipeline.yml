@@ -20,8 +20,18 @@ stages:
   steps:
   - applyAppConfig:
       catalog: lawrtest-memcached
-      version: 2.3.1
-      answers: '{"a":"b"}'
+      version: 2.0.4
+      answers: |
+        {
+        "AntiAffinity": "soft",
+        "defaultImage": "true",
+        "image": "memcached",
+        "imageTag": "1.5.6-alpine",
+        "memcached.maxItemMemory": "64",
+        "memcached.verbosity": "v",
+        "replicaCount": "1",
+        "showMemcachedOptions": "false",
+        }
       name: myapp
       targetNamespace: myapp
 timeout: 60
