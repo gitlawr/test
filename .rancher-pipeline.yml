@@ -30,7 +30,7 @@ stages:
         "memcached.maxItemMemory": "64",
         "memcached.verbosity": "v",
         "replicaCount": "1",
-        "showMemcachedOptions": "false",
+        "showMemcachedOptions": "false"
         }
       name: myapp
       targetNamespace: myapp
