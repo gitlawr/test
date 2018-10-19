@@ -35,6 +35,4 @@ stages:
         }
       name: myapp
       targetNamespace: myapp
-    env:
-      DEBUG: "true"
 timeout: 60
