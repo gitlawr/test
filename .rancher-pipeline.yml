@@ -4,7 +4,7 @@ stages:
   - publishCatalogConfig:
       path: ./mychart
       catalog: memcached
-      version: ${CICD_GIT_COMMIT}
+      version: ${CICD_GIT_TAG}
       gitUrl: https://github.com/gitlawr/charts.git
       gitBranch: lawrtest
       gitAuthor: mytest
@@ -20,7 +20,7 @@ stages:
   steps:
   - applyAppConfig:
       catalog: lawrtest-memcached
-      version: 2.0.4
+      version: ${CICD_GIT_TAG}
       answers: |
         {
         "AntiAffinity": "soft",
