@@ -3,5 +3,5 @@ stages:
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: ls
+      shellScript: env
 timeout: 60
