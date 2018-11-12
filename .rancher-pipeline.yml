@@ -9,4 +9,7 @@ notification:
   recipients:
   - recipient: lawrlee@foxmail.com
     notifier: lawrmail
-  condition: ["Failed","Success"]
+  - notifier: myslack
+  condition:
+  - Failed
+  - Success
