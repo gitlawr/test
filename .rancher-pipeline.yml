@@ -4,10 +4,12 @@ stages:
   - sourceCodeConfig:
       skipTlsVerify: true
   when:
-    branch: ne
+    branch:
+      include:
+      - ne
 - name: build
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: env
+      shellScript: env && ls
 timeout: 60
