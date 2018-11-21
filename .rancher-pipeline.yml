@@ -2,8 +2,9 @@ stages:
 - name: clone
   steps:
   - sourceCodeConfig:
-      skipClone: true
       skipTlsVerify: true
+  when:
+    branch: ne
 - name: build
   steps:
   - runScriptConfig:
