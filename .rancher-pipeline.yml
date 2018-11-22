@@ -1,15 +1,7 @@
 stages:
-- name: clone
-  steps:
-  - sourceCodeConfig:
-      skipTlsVerify: true
-  when:
-    branch:
-      include:
-      - ne
 - name: build
   steps:
   - runScriptConfig:
-      image: busybox
-      shellScript: env && ls
+      image: reg.cnrancher.com/lawr/busybox
+      shellScript: ls
 timeout: 60
