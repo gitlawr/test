@@ -2,6 +2,6 @@ stages:
 - name: build
   steps:
   - runScriptConfig:
-      image: reg.cnrancher.com/lawr/busybox
+      image: busybox
       shellScript: ls
 timeout: 60
