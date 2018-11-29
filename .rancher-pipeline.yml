@@ -3,13 +3,12 @@ stages:
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: env
+      shellScript: ls
 timeout: 60
 notification:
   recipients:
   - recipient: lawrlee@foxmail.com
-    notifier: lawrmail
-  - notifier: myslack
+    notifier: test
   condition:
   - Failed
   - Success
