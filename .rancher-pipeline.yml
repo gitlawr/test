@@ -1,9 +1,4 @@
 stages:
-- name: build
-  steps:
-  - runScriptConfig:
-      image: busybox
-      shellScript: ls
 - name: compile-api-abc
   steps:
   - runScriptConfig:
