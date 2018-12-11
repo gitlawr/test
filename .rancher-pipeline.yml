@@ -4,4 +4,10 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: ls
+- name: compile-api-abc
+  steps:
+  - runScriptConfig:
+      image: busybox
+      shellScript: ls
 timeout: 60
+notification: {}
