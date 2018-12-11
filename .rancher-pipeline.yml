@@ -1,5 +1,5 @@
 stages:
-- name: a-b-c
+- name: compile-api-abc
   steps:
   - runScriptConfig:
       image: busybox
