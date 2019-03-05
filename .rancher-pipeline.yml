@@ -5,6 +5,7 @@ stages:
       catalogTemplate: cattle-global-data:library-mysql
       version: 0.3.8
       answers:
+        a: b
         mysqlPassword: ${CICD_GIT_COMMIT}
         persistence.enabled: "false"
       name: mytest
