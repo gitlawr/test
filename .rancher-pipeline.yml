@@ -1,44 +1,12 @@
 stages:
 - name: build
   steps:
-  - runScriptConfig:
-      image: busybox
-      shellScript: echo test
-- name: publish-catalog
-  steps:
-  - publishCatalogConfig:
-      path: ./charts/memcached/v2.0.4
-      catalog: memcached
-      version: v2.0.5
-      gitUrl: "git@github.com:gitlawr/test.git"
-      gitBranch: test
-      gitAuthor: test-author
-      gitEmail: test@example.com
-    envFrom:
-    - sourceName: publish-key
-      sourceKey: DEPLOY_KEY
-    - sourceName: publish-key
-      sourceKey: USERNAME
-    - sourceName: publish-key
-      sourceKey: PASSWORD
-- name: apply-app
-  steps:
   - applyAppConfig:
-      catalog: memcached
-      version: 2.3.1
-      name: myapp
-      targetNamespace: myappns
-      # answers can be in either json or yaml format
-      answers: 
-        AntiAffinity: "hard"
-        defaultImage: "true"
-        image: "memcached"
-        imageTag: "1.5.6-alpine"
-        memcached.maxItemMemory: "64"
-        memcached.verbosity: "v"
-        metrics.enabled: "false"
-        metrics.image: "quay.io/prometheus/memcached-exporter"
-        metrics.imageTag: "v0.4.1"
-        replicaCount: "1"
-        showMemcachedOptions: "false"
+      catalogTemplate: cattle-global-data:library-mysql
+      version: 0.3.8
+      answers:
+        persistence.enabled: "false"
+      name: mytest
+      targetNamespace: default
 timeout: 60
+notification: {}
