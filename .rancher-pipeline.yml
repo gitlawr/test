@@ -5,3 +5,4 @@ stages:
       image: polinux/stress
       shellScript: stress -m 1 --vm-bytes 2G --vm-keep --timeout 10s
     memoryLimit: 3Gi
+    cpuLimit: 200m
