@@ -7,7 +7,7 @@ stages:
 timeout: 60
 notification:
   recipients:
-  - recipient: '@all'
+  - recipient: 李平辉
     notifier: c-kr9gr:n-nnp6f
   condition:
   - Success
