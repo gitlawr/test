@@ -7,7 +7,9 @@ stages:
 timeout: 60
 notification:
   recipients:
-  - recipient: '@lawrence'
-    notifier: c-nfzzb:n-fmq4h
+  - recipient: '@all'
+    notifier: c-kr9gr:n-nnp6f
   condition:
+  - Success
+  - Changed
   - Failed
