@@ -3,8 +3,8 @@ stages:
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: ls #stress -m 1 --vm-bytes 2G --vm-keep --timeout 10s
-    cpuLimit: xxx
+      shellScript: date
     cpuRequest: xxx
+    cpuLimit: xxx
+    memoryRequest: xxx
     memoryLimit: xxx
-    memoryRequest: xxx 
