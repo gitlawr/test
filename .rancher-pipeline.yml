@@ -6,5 +6,5 @@ stages:
       shellScript: date
     cpuRequest: 10m
     cpuLimit: 200m
-    memoryRequest: xxx
+    memoryRequest: 10Mi
     memoryLimit: xxx
