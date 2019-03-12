@@ -7,4 +7,4 @@ stages:
     cpuRequest: 10m
     cpuLimit: 200m
     memoryRequest: 10Mi
-    memoryLimit: 100Mi
+    memoryLimit: 200Mi
