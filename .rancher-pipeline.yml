@@ -5,6 +5,6 @@ stages:
       image: busybox
       shellScript: date
     cpuRequest: 10m
-    cpuLimit: xxx
+    cpuLimit: 200m
     memoryRequest: xxx
     memoryLimit: xxx
