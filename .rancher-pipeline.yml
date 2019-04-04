@@ -3,5 +3,5 @@ stages:
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: date
-timeout: 60
+      shellScript: sleep 120
+timeout: 1
