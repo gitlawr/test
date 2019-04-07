@@ -10,3 +10,20 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: date
+  when:
+    branch: notest
+- name: build2
+  steps:
+  - runScriptConfig:
+      image: busybox
+      shellScript: date
+    when:
+      branch: test
+  - runScriptConfig:
+      image: busybox
+      shellScript: date
+    when:
+      branch: notest
+  - runScriptConfig:
+      image: busybox
+      shellScript: date
