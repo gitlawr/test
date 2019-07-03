@@ -16,4 +16,6 @@ stages:
         service.type: NodePort
       name: mygra
       targetNamespace: default
+    env:
+      API_TOKEN: "token-g4vtl:22mz972nljgr5ndcvsppkw8rvszvlb2b4gbnhcxwxfq29l6zjggcv5"
 notification: {}
