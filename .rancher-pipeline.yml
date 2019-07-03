@@ -1,13 +1,19 @@
 stages:
-- name: build
+- name: deployapp
   steps:
-  - runScriptConfig:
-      image: busybox
-      shellScript: date
-  when:
-    branch: {}
-- name: apply
-  steps:
-  - applyYamlConfig:
-      path: ./sm.yml
+  - applyAppConfig:
+      catalogTemplate: p-2wt2b:projectc-grafana
+      version: 0.0.31
+      answers:
+        adminUser: admin
+        auth.anonymous.enabled: "true"
+        defaultImage: "true"
+        grafanaWatcher.image.repository: appropriate/curl
+        grafanaWatcher.image.tag: latest
+        image.repository: grafana/grafana
+        image.tag: 5.0.0
+        persistence.enabled: "false"
+        service.type: NodePort
+      name: mygra
+      targetNamespace: default
 notification: {}
