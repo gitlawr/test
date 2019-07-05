@@ -1,21 +1,7 @@
 stages:
-- name: deployapp
+- name: build
   steps:
-  - applyAppConfig:
-      catalogTemplate: p-2wt2b:projectc-grafana
-      version: 0.0.31
-      answers:
-        adminUser: admin
-        auth.anonymous.enabled: "true"
-        defaultImage: "true"
-        grafanaWatcher.image.repository: appropriate/curl
-        grafanaWatcher.image.tag: latest
-        image.repository: grafana/grafana
-        image.tag: 5.0.0
-        persistence.enabled: "false"
-        service.type: NodePort
-      name: mygra
-      targetNamespace: default
-    env:
-      API_TOKEN: "token-g4vtl:22mz972nljgr5ndcvsppkw8rvszvlb2b4gbnhcxwxfq29l6zjggcv5"
+  - runScriptConfig:
+      image: busybox
+      shellScript: echo good
 notification: {}
