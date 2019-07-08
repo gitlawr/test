@@ -5,3 +5,9 @@ stages:
       image: busybox
       shellScript: sleep 120
 timeout: 1
+notification:
+  recipients:
+  - recipient: https://webhook.site/6840f0f9-9268-49a5-a13d-955b776b398f
+    notifier: c-rtgjn:n-qwmpm
+  condition:
+  - Success
