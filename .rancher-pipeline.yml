@@ -11,3 +11,4 @@ notification:
     notifier: c-rtgjn:n-qwmpm
   condition:
   - Success
+  - Failed
