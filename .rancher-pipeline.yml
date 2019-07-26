@@ -3,5 +3,5 @@ stages:
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: echo goodd
+      shellScript: echo gooddd
 notification: {}
