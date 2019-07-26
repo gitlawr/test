@@ -3,6 +3,6 @@ stages:
   steps:
   - runScriptConfig:
       image: lawr/kubectl
-      shellScript: kubectl config get-contexts
+      shellScript: echo ${CICD_PROJECT_ID}
 timeout: 1
 notification: {}
