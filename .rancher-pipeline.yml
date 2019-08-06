@@ -21,7 +21,9 @@ stages:
       tag: mytest:v1
       registry: 127.0.0.1:34345
     env:
-      PLUGIN_BUILD_ARGS: HTTP_PROXY=http://13.251.127.172:8888,NO_PROXY=10.42.0.0/16
+      HTTP_PROXY: http://13.251.127.172:8888
+      HTTPS_PROXY: http://13.251.127.172:8888
+      NO_PROXY: 10.42.0.0/16
       PLUGIN_DEBUG: "true"
 timeout: 1
 notification: {}
