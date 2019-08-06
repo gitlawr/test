@@ -16,6 +16,7 @@ stages:
       tag: mytest:v1
       registry: 127.0.0.1:34345
     env:
+      PLUGIN_BUILD_ARGS: "HTTP_PROXY=http://13.251.127.172:8888,HTTPS_PROXY=http://13.251.127.172:8888"
       HTTP_PROXY: http://13.251.127.172:8888
       HTTPS_PROXY: http://13.251.127.172:8888
 timeout: 1
