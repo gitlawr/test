@@ -1,4 +1,10 @@
 stages:
+- name: clone
+  steps:
+  - sourceCodeConfig: {}
+    env:
+      HTTP_PROXY: http://13.251.127.172:8888
+      HTTPS_PROXY: http://13.251.127.172:8888
 - name: build
   steps:
   - runScriptConfig:
@@ -9,5 +15,8 @@ stages:
       buildContext: .
       tag: mytest:v1
       registry: 127.0.0.1:34345
+    env:
+      HTTP_PROXY: http://13.251.127.172:8888
+      HTTPS_PROXY: http://13.251.127.172:8888
 timeout: 1
 notification: {}
