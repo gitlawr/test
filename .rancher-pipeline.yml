@@ -23,7 +23,7 @@ stages:
     env:
       HTTP_PROXY: http://13.251.127.172:8888
       HTTPS_PROXY: http://13.251.127.172:8888
-      NO_PROXY: 10.42.0.0/16,10.43.0.0/16
+      NO_PROXY: 10.42.0.0/16,10.43.0.0/16,docker-registry.p-n2x4l-pipeline,*.cluster.local
       PLUGIN_DEBUG: "true"
 timeout: 1
 notification: {}
