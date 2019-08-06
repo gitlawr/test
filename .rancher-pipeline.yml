@@ -1,4 +1,10 @@
 stages:
+- name: clone
+  steps:
+  - sourceCodeConfig: {}
+    env:
+      HTTP_PROXY: http://13.251.127.172:8888
+      HTTPS_PROXY: http://13.251.127.172:8888
 - name: build
   steps:
   - runScriptConfig:
