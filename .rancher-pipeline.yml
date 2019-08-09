@@ -8,5 +8,7 @@ stages:
         persistence.enabled: "false"
       name: mydb
       targetNamespace: default
+    env:
+      DEBUG: true
 timeout: 1
 notification: {}
