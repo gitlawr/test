@@ -6,9 +6,5 @@ stages:
       version: 0.3.8
       answers:
         persistence.enabled: "false"
-      name: mydb
+      name: mydb2
       targetNamespace: default
-    env:
-      DEBUG: "true"
-timeout: 1
-notification: {}
