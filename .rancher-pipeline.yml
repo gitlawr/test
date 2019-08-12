@@ -2,13 +2,13 @@ stages:
 - name: build
   steps:
   - applyAppConfig:
-      catalogTemplate: p-ddj28:pcatalog-mysql
+      catalogTemplate: p-kq44f:pcatalog-mysql
       version: 0.3.8
       answers:
         persistence.enabled: "false"
       name: mydb
       targetNamespace: default
     env:
-      DEBUG: true
+      DEBUG: "true"
 timeout: 1
 notification: {}
