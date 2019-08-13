@@ -2,9 +2,8 @@ stages:
 - name: build
   steps:
   - applyAppConfig:
-      catalogTemplate: p-kq44f:pcatalog-mysql
-      version: 0.3.8
-      answers:
-        persistence.enabled: "false"
-      name: mydb2
+      catalogTemplate: cattle-global-data:library-grafana
+      version: 0.0.31
+      name: graf
       targetNamespace: default
+notification: {}
