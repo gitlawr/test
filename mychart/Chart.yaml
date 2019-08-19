@@ -1,6 +1,6 @@
 name: memcached
-version: 0.1.0_${CICD_GIT_COMMIT}
-appVersion: 1.5.6
+version: ${CATALOG_VERSION}
+appVersion: ${APP_VERSION}
 description: Free & open source, high-performance, distributed memory object caching
   system.
 keywords:
