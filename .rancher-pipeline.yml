@@ -1,13 +1,22 @@
 stages:
 - name: build
   steps:
-  - applyAppConfig:
-      catalogTemplate: cattle-global-data:library-grafana
-      version: 0.0.31
-      name: graf
-      targetNamespace: default
+  - publishCatalogConfig:
+      path: ./mychart
+      catalogTemplate: memcached
+      version: 0.1.0-${CICD_GIT_COMMIT}
+      gitUrl: https://github.com/gitlawr/charts.git
+      gitBranch: master
+      gitAuthor: gitlawr
+      gitEmail: test@example.com
+    env:
+      APP_VERSION: 1.5.6
+      CATALOG_VERSION: 0.1.0-${CICD_GIT_COMMIT}
     envFrom:
-      - sourceName: api-key
-        sourceKey: API_TOKEN
-        targetKey: API_TOKEN
+    - sourceName: ghtoken
+      sourceKey: USERNAME
+      targetKey: USERNAME
+    - sourceName: ghtoken
+      sourceKey: PASSWORD
+      targetKey: PASSWORD
 notification: {}
