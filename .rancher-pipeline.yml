@@ -11,8 +11,6 @@ stages:
       gitEmail: test@example.com
     env:
       APP_VERSION: 1.5.6
-      CATALOG_VERSION: 0.1.0-${CICD_GIT_COMMIT}
-      DEBUG: "true"
     envFrom:
     - sourceName: ghtoken
       sourceKey: USERNAME
