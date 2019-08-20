@@ -1,19 +1,6 @@
 stages:
 - name: build
   steps:
-  - publishCatalogConfig:
-      path: ./mychart
-      catalogTemplate: memcached
-      version: 0.1.0-${CICD_GIT_COMMIT}
-      gitUrl: https://github.com/gitlawr/charts.git
-      gitBranch: master
-      gitAuthor: gitlawr
-      gitEmail: test@example.com
-    envFrom:
-    - sourceName: ghtoken
-      sourceKey: USERNAME
-      targetKey: USERNAME
-    - sourceName: ghtoken
-      sourceKey: PASSWORD
-      targetKey: PASSWORD
-notification: {}
+  - runScriptConfig:
+      image: busybox
+      shellScript: env
