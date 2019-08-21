@@ -3,26 +3,8 @@ stages:
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: env
-  - runScriptConfig:
-      image: busybox
-      shellScript: sleep 20; echo good
-    when:
-      branch:
-        include:
-        - good
-- name: test
-  steps:
-  - runScriptConfig:
-      image: busybox
-      shellScript: echo 2
-  when:
-    branch:
-      include:
-      - good
-notification:
-  recipients:
-  - recipient: '@lawrence'
-    notifier: c-2swwg:n-s6prf
-  condition:
-  - Success
+      shellScript: |-
+        sleep 100
+        echo end
+timeout: 1
+notification: {}
