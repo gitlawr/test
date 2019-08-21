@@ -20,4 +20,9 @@ stages:
     branch:
       include:
       - good
-notification: {}
+notification:
+  recipients:
+  - recipient: '@lawrence'
+    notifier: c-2swwg:n-s6prf
+  condition:
+  - Success
