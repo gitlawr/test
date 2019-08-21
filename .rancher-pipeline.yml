@@ -4,3 +4,7 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: env
+  - runScriptConfig:
+      image: busybox
+      shellScript: sleep 20; echo good
+notification: {}
