@@ -7,4 +7,17 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: sleep 20; echo good
+    when:
+      branch:
+        include:
+        - good
+- name: test
+  steps:
+  - runScriptConfig:
+      image: busybox
+      shellScript: echo 2
+  when:
+    branch:
+      include:
+      - good
 notification: {}
