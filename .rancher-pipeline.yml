@@ -4,4 +4,12 @@ stages:
   - runScriptConfig:
       image: busybox
       shellScript: echo good
-notification: {}
+notification:
+  recipients:
+  - recipient: '@lawrence'
+    notifier: c-dmjzz:n-vkd96
+  - recipient: '@lawrence'
+    notifier: c-dmjzz:n-nfjfw
+  condition:
+  - Success
+  - Failed
