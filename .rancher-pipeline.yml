@@ -1,15 +1,11 @@
 stages:
+- name: clone
+  steps:
+  - sourceCodeConfig:
+      env:
+        JAVA_OPTS: -Dorg.jenkinsci.plugins.gitclient.Git.timeOut=30
 - name: build
   steps:
   - runScriptConfig:
       image: busybox
       shellScript: echo good
-notification:
-  recipients:
-  - recipient: '@lawrence'
-    notifier: c-dmjzz:n-vkd96
-  - recipient: '@lawrence'
-    notifier: c-dmjzz:n-nfjfw
-  condition:
-  - Success
-  - Failed
