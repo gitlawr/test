@@ -1,9 +1,9 @@
 stages:
 - name: clone
   steps:
-  - sourceCodeConfig:
-      env:
-        JAVA_OPTS: -Dorg.jenkinsci.plugins.gitclient.Git.timeOut=30
+  - sourceCodeConfig: {}
+    env:
+      JAVA_OPTS: -Dorg.jenkinsci.plugins.gitclient.Git.timeOut=30
 - name: build
   steps:
   - runScriptConfig:
