@@ -1,0 +1,26 @@
+name: Test Docker Tags
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  publish-docker:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        device: ["cuda", "musa", "npu", "rocm", "cpu"]
+    steps:
+      - name: Get Metadata
+        id: metadata
+        uses: docker/metadata-action@v5
+        with:
+          images: foo/bar
+          tags: |
+            type=pep440,pattern={{raw}}
+            type=pep440,pattern=v{{major}}.{{minor}}
+            type=ref,event=branch
+            type=ref,event=pr
+            type=raw,value=latest,enable=${{ matrix.device == 'cuda' && startsWith(github.ref, 'refs/tags/') && !contains(github.ref, 'rc') }}
+          # set no tag suffix for cuda as the default, set -{device} suffix for others
+          flavor: |
+            suffix=${{ matrix.device != 'cuda' && format('-{0}', matrix.device) || '' }}
