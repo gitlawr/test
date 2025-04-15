@@ -6,9 +6,6 @@ on:
 jobs:
   publish-docker:
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        device: ["cuda", "musa", "npu", "rocm", "cpu"]
     steps:
       - name: Get Metadata
         id: metadata
@@ -24,4 +21,4 @@ jobs:
           # set no tag suffix for cuda as the default, set -{device} suffix for others
           flavor: |
             latest=false
-            suffix=${{ matrix.device != 'cuda' && format('-{0}', matrix.device) || '' }}
+            suffix=${{ '-the-suffix' }}
