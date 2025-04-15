@@ -13,7 +13,6 @@ jobs:
         with:
           images: foo/bar
           tags: |
-            type=pep440,pattern={{raw}}
             type=pep440,pattern=v{{major}}.{{minor}}
             type=ref,event=branch
             type=ref,event=pr
